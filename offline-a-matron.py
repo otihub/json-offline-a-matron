@@ -7,8 +7,9 @@ varName = raw_input("What variable are you referencing this JSON as?: ")
 
 with open(filePath, "r+") as f:
     data = json.load(f)
-    newData =("var " + varName + "=")
+    newData ="var " + varName + "="
     f.seek(0)
-    f.write(json.dumps(newData))
+    f.write(newData)
     f.truncate()
     f.write(json.dumps(data))
+print "Finished"
